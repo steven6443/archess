@@ -38,8 +38,8 @@ body {
   width: 95px;
 }
 
-.contact_button a {
-  text-decoration: none;
+.contact_button button {
+  cursor: pointer;
   color: #074c8d;
   padding: 15px 25px;
   background: transparent;
@@ -50,12 +50,12 @@ body {
   border: 2px solid #074c8d;
 }
 
-.contact_button a:hover {
+.contact_button button:hover {
   color: #fff;
   background: #074c8d;
 }
 
-.contact_button a:focus-visible {
+.contact_button button:focus-visible {
   outline: 2px solid #074c8d;
   outline-offset: 4px;
 }
@@ -111,19 +111,6 @@ footer .footer_content p {
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeIn {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes fadeIn {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
 }
 
 @-webkit-keyframes fadeInDown {
