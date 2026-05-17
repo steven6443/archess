@@ -99,6 +99,13 @@ footer p {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animated {
+    -webkit-animation: none !important;
+    animation: none !important;
+  }
+}
+
 /* animate.css (MIT) — Daniel Eden | only keyframes used by this page */
 
 .animated {
