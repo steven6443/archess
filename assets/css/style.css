@@ -38,8 +38,8 @@ body {
   width: 95px;
 }
 
-.contact_button button {
-  cursor: pointer;
+.contact_button a {
+  text-decoration: none;
   color: #074c8d;
   padding: 15px 25px;
   background: transparent;
@@ -50,12 +50,12 @@ body {
   border: 2px solid #074c8d;
 }
 
-.contact_button button:hover {
+.contact_button a:hover {
   color: #fff;
   background: #074c8d;
 }
 
-.contact_button button:focus-visible {
+.contact_button a:focus-visible {
   outline: 2px solid #074c8d;
   outline-offset: 4px;
 }
