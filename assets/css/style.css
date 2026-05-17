@@ -81,22 +81,14 @@ footer .footer_content p {
   }
 
   .intro_bg {
-    background: url(../files/mobile_bg.jpg) rgba(0, 0, 0, 0.7);
-    background-position: center center;
-    background-blend-mode: multiply;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .logo img {
-    width: 95px;
+    background-image: url(../files/mobile_bg.jpg);
   }
 
   .intro_content {
     height: 85vh;
   }
 
-  .about_sect {
+  .about_section {
     padding-left: 10px;
   }
 
@@ -139,8 +131,8 @@ footer .footer_content p {
   100% { opacity: 1; -webkit-transform: translateY(0);     transform: translateY(0); }
 }
 @keyframes fadeInDown {
-  0%   { opacity: 0; -webkit-transform: translateY(-20px); -ms-transform: translateY(-20px); transform: translateY(-20px); }
-  100% { opacity: 1; -webkit-transform: translateY(0);     -ms-transform: translateY(0);     transform: translateY(0); }
+  0%   { opacity: 0; -webkit-transform: translateY(-20px); transform: translateY(-20px); }
+  100% { opacity: 1; -webkit-transform: translateY(0);     transform: translateY(0); }
 }
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
@@ -152,8 +144,8 @@ footer .footer_content p {
   100% { opacity: 1; -webkit-transform: translateY(0);    transform: translateY(0); }
 }
 @keyframes fadeInUp {
-  0%   { opacity: 0; -webkit-transform: translateY(20px); -ms-transform: translateY(20px); transform: translateY(20px); }
-  100% { opacity: 1; -webkit-transform: translateY(0);    -ms-transform: translateY(0);    transform: translateY(0); }
+  0%   { opacity: 0; -webkit-transform: translateY(20px); transform: translateY(20px); }
+  100% { opacity: 1; -webkit-transform: translateY(0);    transform: translateY(0); }
 }
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
@@ -165,8 +157,8 @@ footer .footer_content p {
   100% { opacity: 1; -webkit-transform: translateX(0);     transform: translateX(0); }
 }
 @keyframes fadeInLeft {
-  0%   { opacity: 0; -webkit-transform: translateX(-20px); -ms-transform: translateX(-20px); transform: translateX(-20px); }
-  100% { opacity: 1; -webkit-transform: translateX(0);     -ms-transform: translateX(0);     transform: translateX(0); }
+  0%   { opacity: 0; -webkit-transform: translateX(-20px); transform: translateX(-20px); }
+  100% { opacity: 1; -webkit-transform: translateX(0);     transform: translateX(0); }
 }
 .fadeInLeft {
   -webkit-animation-name: fadeInLeft;
@@ -178,8 +170,8 @@ footer .footer_content p {
   100% { opacity: 1; -webkit-transform: translateX(0);    transform: translateX(0); }
 }
 @keyframes fadeInRight {
-  0%   { opacity: 0; -webkit-transform: translateX(20px); -ms-transform: translateX(20px); transform: translateX(20px); }
-  100% { opacity: 1; -webkit-transform: translateX(0);    -ms-transform: translateX(0);    transform: translateX(0); }
+  0%   { opacity: 0; -webkit-transform: translateX(20px); transform: translateX(20px); }
+  100% { opacity: 1; -webkit-transform: translateX(0);    transform: translateX(0); }
 }
 .fadeInRight {
   -webkit-animation-name: fadeInRight;
