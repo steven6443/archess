@@ -22,7 +22,7 @@ body {
 }
 
 .intro_bg {
-  background: url(../files/intro_bg.jpg) rgb(0, 0, 0, .7);
+  background: url(../files/intro_bg.jpg) rgba(0, 0, 0, 0.7);
   background-position: center center;
   background-blend-mode: multiply;
   background-repeat: no-repeat;
@@ -48,7 +48,7 @@ body {
   background: 0 0;
   border-radius: 5px;
   font-size: 20px;
-  transition: .2s;
+  transition: background-color 0.2s, color 0.2s;
   font-weight: 600;
   border: 2px solid #074c8d;
 }
@@ -62,8 +62,12 @@ body {
   width: 80%;
 }
 
-footer p {
-  font-size: 14px !important;
+footer .footer_content p {
+  font-size: 14px;
+}
+
+.about_content p {
+  color: #7a7a7a;
 }
 
 @media (max-width: 667px) {
@@ -75,7 +79,7 @@ footer p {
   }
 
   .intro_bg {
-    background: url(../files/mobile_bg.jpg) rgb(0, 0, 0, .7);
+    background: url(../files/mobile_bg.jpg) rgba(0, 0, 0, 0.7);
     background-position: center center;
     background-blend-mode: multiply;
     background-repeat: no-repeat;
