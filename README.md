@@ -16,9 +16,13 @@ Marketing site for [Arch Essentials](https://archessbrands.com) — an LA-based 
 ├── assets/
 │   ├── css/
 │   │   └── style.css       # All custom styles and animation keyframes
+│   ├── js/
+│   │   └── main.js         # WOW.js init and email obfuscation
 │   └── files/
 │       ├── Arch-logo.png
 │       ├── arch.png
+│       ├── favicon.png
+│       ├── og-arch-essentials.png
 │       ├── intro_bg.jpg
 │       ├── mobile_bg.jpg
 │       └── wow.min.js
