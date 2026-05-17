@@ -1,9 +1,6 @@
-@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap);
-
 body {
   font-family: Poppins, sans-serif;
   margin: 0;
-  overflow-x: hidden;
 }
 
 *, ::after, ::before, p {
@@ -45,7 +42,7 @@ body {
   text-decoration: none;
   color: #074c8d;
   padding: 15px 25px;
-  background: 0 0;
+  background: transparent;
   border-radius: 5px;
   font-size: 20px;
   transition: background-color 0.2s, color 0.2s;
@@ -56,6 +53,11 @@ body {
 .contact_button a:hover {
   color: #fff;
   background: #074c8d;
+}
+
+.contact_button a:focus-visible {
+  outline: 2px solid #074c8d;
+  outline-offset: 4px;
 }
 
 .about_pic img {
