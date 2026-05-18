@@ -1,6 +1,6 @@
 # Arch Essentials
 
-Marketing site for [Arch Essentials](https://archessbrands.com) — an LA-based e-commerce brand focused on simplicity, efficiency, and sustainability.
+Marketing site for [Arch Essentials](https://www.archessbrands.com) — an LA-based e-commerce brand focused on simplicity, efficiency, and sustainability.
 
 ## Stack
 
