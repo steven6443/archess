@@ -93,9 +93,6 @@ footer .footer_content p {
     padding-left: 10px;
   }
 
-  .about_pic img {
-    width: 80%;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
