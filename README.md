@@ -17,7 +17,7 @@ Marketing site for [Arch Essentials](https://www.archessbrands.com) — an LA-ba
 │   ├── css/
 │   │   └── style.css       # All custom styles and animation keyframes
 │   ├── js/
-│   │   └── main.js         # WOW.js init and email obfuscation
+│   │   └── main.js         # WOW.js init
 │   └── files/
 │       ├── Arch-logo.png
 │       ├── arch.png
@@ -39,4 +39,4 @@ npx serve .
 
 ## Deployment
 
-The site is hosted on GitHub Pages. Pushing to `main` deploys automatically to [archessbrands.com](https://archessbrands.com).
+The site is hosted on GitHub Pages. Pushing to `main` deploys automatically to [www.archessbrands.com](https://www.archessbrands.com).
