@@ -39,6 +39,7 @@ body {
 }
 
 .contact_button a {
+  display: inline-block;
   text-decoration: none;
   color: #074c8d;
   padding: 15px 25px;
