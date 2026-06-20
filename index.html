@@ -343,6 +343,18 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  // ── Anchor clicks: scroll without changing the URL ─────────────────────
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth' });
+  });
+
   // ── Cookie consent banner ───────────────────────────────────────────────
   if (!localStorage.getItem('ae-cookies')) {
     const banner = document.createElement('div');
