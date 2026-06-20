@@ -46,6 +46,67 @@
 
   /* Footer / legal link hover */
   .footer-link:hover { color: #F2EEE6; }
+
+  /* ── Mobile (≤ 767px) ─────────────────────────────────────────────────── */
+  @media (max-width: 767px) {
+    /* Nav */
+    #site-nav-inner       { padding: 14px 20px !important; }
+    #main-nav .nav-link   { display: none; }
+
+    /* Hero */
+    .hero-content { padding: 72px 24px 48px !important; }
+    .hero-h1      { font-size: 40px !important; line-height: 1.05 !important; }
+
+    /* Shared section padding */
+    .sec-pad { padding: 72px 24px !important; }
+
+    /* Philosophy */
+    .phil-h2   { font-size: 28px !important; }
+    .phil-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+    #philosophy-tiles { grid-template-columns: 1fr !important; }
+
+    /* Approach */
+    .approach-h2  { font-size: 36px !important; margin-bottom: 40px !important; }
+    .approach-grid { grid-template-columns: 1fr !important; }
+    .approach-col  { padding: 24px 0 0 0 !important; border-right: none !important; border-top: 1px solid rgba(242,238,230,0.14) !important; }
+    .approach-col:first-child { border-top: none !important; }
+
+    /* Portfolio */
+    .portfolio-h2  { font-size: 36px !important; }
+    .category-row  { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; padding: 22px 8px !important; }
+    .cat-name      { font-size: 22px !important; }
+
+    /* Contact */
+    .contact-content { padding: 72px 24px !important; }
+    .contact-h2      { font-size: 38px !important; }
+
+    /* Footer */
+    .footer-inner  { padding: 40px 24px !important; }
+    .footer-top    { flex-direction: column !important; align-items: flex-start !important; gap: 20px !important; }
+    .footer-bottom { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
+    .footer-legal  { flex-wrap: wrap !important; gap: 14px !important; }
+
+    /* Cookie banner */
+    #ae-cookie-banner { padding: 16px 20px !important; }
+  }
+
+  /* ── Tablet (768px – 1024px) ──────────────────────────────────────────── */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    #site-nav-inner { padding: 16px 32px !important; }
+    .hero-content   { padding: 90px 40px 60px !important; }
+    .hero-h1        { font-size: 56px !important; }
+    .sec-pad        { padding: 100px 40px !important; }
+    .phil-h2        { font-size: 36px !important; }
+    .approach-h2    { font-size: 44px !important; }
+    .approach-grid  { grid-template-columns: repeat(2, 1fr) !important; }
+    .approach-col:nth-child(2) { border-right: none !important; }
+    .approach-col:nth-child(3) { border-top: 1px solid rgba(242,238,230,0.14) !important; padding-left: 0 !important; padding-right: 28px !important; border-right: 1px solid rgba(242,238,230,0.14) !important; }
+    .approach-col:nth-child(4) { border-top: 1px solid rgba(242,238,230,0.14) !important; }
+    .portfolio-h2   { font-size: 42px !important; }
+    .contact-h2     { font-size: 52px !important; }
+    .footer-inner   { padding: 48px 40px !important; }
+    .footer-legal   { flex-wrap: wrap !important; gap: 16px !important; }
+  }
 </style>
 </head>
 <body style="background:#141110; color:#F2EEE6; font-family:'Schibsted Grotesk',system-ui,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:clip;">
@@ -62,7 +123,7 @@
         </div>
         <span style="font-family:'Schibsted Grotesk',sans-serif; font-size:20px; font-weight:700; letter-spacing:-0.035em; white-space:nowrap;">Arch <span style="font-weight:450; color:#C9C3B9;">Essentials</span></span>
       </a>
-      <nav style="display:flex; align-items:center; gap:36px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#A39E94;">
+      <nav id="main-nav" style="display:flex; align-items:center; gap:36px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#A39E94;">
         <a href="#philosophy" class="nav-link" style="transition:color .2s;">Philosophy</a>
         <a href="#approach"   class="nav-link" style="transition:color .2s;">Approach</a>
         <a href="#portfolio"  class="nav-link" style="transition:color .2s;">Portfolio</a>
@@ -82,9 +143,9 @@
       <rect x="71" y="11" width="8"  height="139"></rect>
     </svg>
 
-    <div style="position:relative; max-width:1280px; margin:0 auto; padding:118px 64px 80px;">
+    <div class="hero-content" style="position:relative; max-width:1280px; margin:0 auto; padding:118px 64px 80px;">
       <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#CB4A2F;">A Los Angeles house of brands</div>
-      <h1 style="font-weight:760; font-size:78px; line-height:0.99; letter-spacing:-0.035em; margin:30px 0 0; max-width:960px;">We design the essentials of modern life&mdash;and the brands that carry them.</h1>
+      <h1 class="hero-h1" style="font-weight:760; font-size:78px; line-height:0.99; letter-spacing:-0.035em; margin:30px 0 0; max-width:960px;">We design the essentials of modern life&mdash;and the brands that carry them.</h1>
     </div>
 
     <!-- hero ticker strip -->
@@ -132,7 +193,7 @@
 
   <!-- ============ PHILOSOPHY ============ -->
   <section id="philosophy" style="position:relative; border-bottom:1px solid rgba(242,238,230,0.09);">
-    <div style="position:relative; max-width:1280px; margin:0 auto; padding:160px 64px;">
+    <div class="sec-pad" style="position:relative; max-width:1280px; margin:0 auto; padding:160px 64px;">
       <!-- top row: red accent dash + label on left, torii seal on right — same flow row so tops align -->
       <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:60px;">
         <div>
@@ -155,9 +216,9 @@
         </div>
       </div>
 
-      <div style="display:grid; grid-template-columns:1.5fr 1fr; gap:80px; align-items:start;">
+      <div class="phil-grid" style="display:grid; grid-template-columns:1.5fr 1fr; gap:80px; align-items:start;">
         <div>
-          <h2 style="font-family:'Newsreader',serif; font-weight:320; font-size:46px; line-height:1.2; letter-spacing:-0.015em; margin:0;">The torii gate marks the passage from ordinary to an elevated domain. We build brands in that <em style="font-style:italic;">same spirit</em>&mdash;reimagining everyday products to create a better experience on the other side.</h2>
+          <h2 class="phil-h2" style="font-family:'Newsreader',serif; font-weight:320; font-size:46px; line-height:1.2; letter-spacing:-0.015em; margin:0;">The torii gate marks the passage from ordinary to an elevated domain. We build brands in that <em style="font-style:italic;">same spirit</em>&mdash;reimagining everyday products to create a better experience on the other side.</h2>
         </div>
         <div style="padding-top:8px;">
           <p style="font-size:16px; line-height:1.7; color:#A39E94; margin:0;">Arch Essentials is a Los Angeles-based consumer brand studio building and managing a portfolio of modern lifestyle brands. Our commitment is to bring innovation across categories where better design, clearer positioning, and long-term customer value can create meaningful improvement.</p>
@@ -197,30 +258,30 @@
 
   <!-- ============ APPROACH ============ -->
   <section id="approach" style="border-bottom:1px solid rgba(242,238,230,0.09); background:#191613;">
-    <div style="max-width:1280px; margin:0 auto; padding:160px 64px;">
+    <div class="sec-pad" style="max-width:1280px; margin:0 auto; padding:160px 64px;">
       <div style="width:36px; height:2px; background:#CB4A2F; margin-bottom:28px;"></div>
       <div style="display:flex; align-items:baseline; gap:18px; margin-bottom:26px;">
         <span style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#CB4A2F;">02</span>
         <span style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#A39E94;">Approach</span>
       </div>
-      <h2 style="font-weight:740; font-size:54px; line-height:1.0; letter-spacing:-0.03em; margin:0 0 70px; max-width:620px;">What we do.</h2>
-      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid rgba(242,238,230,0.14);">
-        <div style="padding:32px 28px 0 0; border-right:1px solid rgba(242,238,230,0.14);">
+      <h2 class="approach-h2" style="font-weight:740; font-size:54px; line-height:1.0; letter-spacing:-0.03em; margin:0 0 70px; max-width:620px;">What we do.</h2>
+      <div class="approach-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid rgba(242,238,230,0.14);">
+        <div class="approach-col" style="padding:32px 28px 0 0; border-right:1px solid rgba(242,238,230,0.14);">
           <div style="font-family:'Space Mono',monospace; font-size:12px; color:#CB4A2F; letter-spacing:0.1em;">DESIGN</div>
           <div style="font-size:20px; font-weight:600; margin-top:16px;">Product Design &amp; Sourcing</div>
           <p style="font-size:14.5px; line-height:1.6; color:#9A948A; margin:10px 0 0;">Thoughtfully design and turn concepts into reality with our manufacturing partners.</p>
         </div>
-        <div style="padding:32px 28px 0 28px; border-right:1px solid rgba(242,238,230,0.14);">
+        <div class="approach-col" style="padding:32px 28px 0 28px; border-right:1px solid rgba(242,238,230,0.14);">
           <div style="font-family:'Space Mono',monospace; font-size:12px; color:#CB4A2F; letter-spacing:0.1em;">BUILD</div>
           <div style="font-size:20px; font-weight:600; margin-top:16px;">Brand Development</div>
           <p style="font-size:14.5px; line-height:1.6; color:#9A948A; margin:10px 0 0;">Create and take focused consumer brands from product ideas to market launch.</p>
         </div>
-        <div style="padding:32px 28px 0 28px; border-right:1px solid rgba(242,238,230,0.14);">
+        <div class="approach-col" style="padding:32px 28px 0 28px; border-right:1px solid rgba(242,238,230,0.14);">
           <div style="font-family:'Space Mono',monospace; font-size:12px; color:#CB4A2F; letter-spacing:0.1em;">STRATEGY</div>
           <div style="font-size:20px; font-weight:600; margin-top:16px;">Marketplace</div>
           <p style="font-size:14.5px; line-height:1.6; color:#9A948A; margin:10px 0 0;">Manage marketplace strategy, positioning, and customer experience.</p>
         </div>
-        <div style="padding:32px 0 0 28px;">
+        <div class="approach-col" style="padding:32px 0 0 28px;">
           <div style="font-family:'Space Mono',monospace; font-size:12px; color:#CB4A2F; letter-spacing:0.1em;">SCALE</div>
           <div style="font-size:20px; font-weight:600; margin-top:16px;">Wholesale &amp; Distribution</div>
           <p style="font-size:14.5px; line-height:1.6; color:#9A948A; margin:10px 0 0;">Partner with suppliers and retailers to move products through broader sales channels.</p>
@@ -231,7 +292,7 @@
 
   <!-- ============ PORTFOLIO TEASER ============ -->
   <section id="portfolio" style="border-bottom:1px solid rgba(242,238,230,0.09);">
-    <div style="max-width:1280px; margin:0 auto; padding:160px 64px;">
+    <div class="sec-pad" style="max-width:1280px; margin:0 auto; padding:160px 64px;">
       <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:24px; margin-bottom:56px;">
         <div>
           <div style="width:36px; height:2px; background:#CB4A2F; margin-bottom:28px;"></div>
@@ -239,28 +300,28 @@
             <span style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#CB4A2F;">03</span>
             <span style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#A39E94;">Portfolio</span>
           </div>
-          <h2 style="font-weight:740; font-size:54px; line-height:1.0; letter-spacing:-0.03em; margin:0; max-width:640px;">A growing house of brands across everyday categories.</h2>
+          <h2 class="portfolio-h2" style="font-weight:740; font-size:54px; line-height:1.0; letter-spacing:-0.03em; margin:0; max-width:640px;">A growing house of brands across everyday categories.</h2>
         </div>
       </div>
       <div style="border-top:1px solid rgba(242,238,230,0.14);">
         <div class="category-row" style="display:flex; align-items:center; gap:32px; padding:34px 8px; border-bottom:1px solid rgba(242,238,230,0.14); transition:background .2s, padding-left .2s; cursor:default;">
           <div style="width:8px; height:8px; background:#CB4A2F; border-radius:1px; flex-shrink:0;"></div>
-          <span style="font-size:30px; font-weight:600; letter-spacing:-0.02em; flex:1;">Home &amp; Lifestyle</span>
+          <span class="cat-name" style="font-size:30px; font-weight:600; letter-spacing:-0.02em; flex:1;">Home &amp; Lifestyle</span>
           <span style="font-size:15px; color:#9A948A; flex:1.3; max-width:420px;">Modern home and lifestyle products built around comfort, utility, and everyday convenience.</span>
         </div>
         <div class="category-row" style="display:flex; align-items:center; gap:32px; padding:34px 8px; border-bottom:1px solid rgba(242,238,230,0.14); transition:background .2s, padding-left .2s; cursor:default;">
           <div style="width:8px; height:8px; background:#CB4A2F; border-radius:1px; flex-shrink:0;"></div>
-          <span style="font-size:30px; font-weight:600; letter-spacing:-0.02em; flex:1;">Outdoor &amp; Recreation</span>
+          <span class="cat-name" style="font-size:30px; font-weight:600; letter-spacing:-0.02em; flex:1;">Outdoor &amp; Recreation</span>
           <span style="font-size:15px; color:#9A948A; flex:1.3; max-width:420px;">Gear and accessories designed to support active lifestyles, weekend hobbies, and time spent outside.</span>
         </div>
         <div class="category-row" style="display:flex; align-items:center; gap:32px; padding:34px 8px; border-bottom:1px solid rgba(242,238,230,0.14); transition:background .2s, padding-left .2s; cursor:default;">
           <div style="width:8px; height:8px; background:#CB4A2F; border-radius:1px; flex-shrink:0;"></div>
-          <span style="font-size:30px; font-weight:600; letter-spacing:-0.02em; flex:1;">Gifts &amp; Novelty</span>
+          <span class="cat-name" style="font-size:30px; font-weight:600; letter-spacing:-0.02em; flex:1;">Gifts &amp; Novelty</span>
           <span style="font-size:15px; color:#9A948A; flex:1.3; max-width:420px;">Creative products with personality. Designed for gifting, collecting, and everyday enjoyment.</span>
         </div>
         <div class="category-row" style="display:flex; align-items:center; gap:32px; padding:34px 8px; border-bottom:1px solid rgba(242,238,230,0.14); transition:background .2s, padding-left .2s; cursor:default;">
           <div style="width:8px; height:8px; background:#CB4A2F; border-radius:1px; flex-shrink:0;"></div>
-          <span style="font-size:30px; font-weight:600; letter-spacing:-0.02em; flex:1;">Automotive</span>
+          <span class="cat-name" style="font-size:30px; font-weight:600; letter-spacing:-0.02em; flex:1;">Automotive</span>
           <span style="font-size:15px; color:#9A948A; flex:1.3; max-width:420px;">Automotive accessories to support the modern driver and enthusiast.</span>
         </div>
       </div>
@@ -276,9 +337,9 @@
       <div style="position:absolute; top:24px; left:78px; width:28px; height:276px; background:#F2EEE6; transform:rotate(2deg); transform-origin:bottom center;"></div>
       <div style="position:absolute; top:24px; right:78px; width:28px; height:276px; background:#F2EEE6; transform:rotate(-2deg); transform-origin:bottom center;"></div>
     </div>
-    <div style="position:relative; max-width:1280px; margin:0 auto; padding:130px 64px; text-align:center;">
+    <div class="contact-content" style="position:relative; max-width:1280px; margin:0 auto; padding:130px 64px; text-align:center;">
       <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#CB4A2F;">Work with us</div>
-      <h2 style="font-family:'Newsreader',serif; font-weight:300; font-size:66px; line-height:1.05; letter-spacing:-0.02em; margin:24px 0 0;">Let&rsquo;s build something <em style="font-style:italic;">essential.</em></h2>
+      <h2 class="contact-h2" style="font-family:'Newsreader',serif; font-weight:300; font-size:66px; line-height:1.05; letter-spacing:-0.02em; margin:24px 0 0;">Let&rsquo;s build something <em style="font-style:italic;">essential.</em></h2>
       <p style="font-size:17px; line-height:1.6; color:#A39E94; max-width:520px; margin:24px auto 0;">For partnerships, retail/wholesale, distribution, or general inquiries&mdash;we&rsquo;d love to hear from you.</p>
       <a href="mailto:hello@archessbrands.com" class="btn-email" style="display:inline-block; margin-top:40px; font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; background:#CB4A2F; color:#F2EEE6; padding:18px 34px; border-radius:2px; transition:background .2s;">hello&#64;archessbrands&#46;com</a>
     </div>
@@ -286,8 +347,8 @@
 
   <!-- ============ FOOTER ============ -->
   <footer style="border-top:1px solid rgba(242,238,230,0.09);">
-    <div style="max-width:1280px; margin:0 auto; padding:48px 64px 40px;">
-      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px;">
+    <div class="footer-inner" style="max-width:1280px; margin:0 auto; padding:48px 64px 40px;">
+      <div class="footer-top" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px;">
         <a href="#top" style="display:flex; align-items:center; gap:13px;">
           <div style="position:relative; width:26px; height:22px;" aria-hidden="true">
             <div style="position:absolute; top:0; left:0; width:26px; height:3.5px; background:#CB4A2F;"></div>
@@ -304,9 +365,9 @@
           <a href="mailto:hello@archessbrands.com" class="footer-link" style="transition:color .2s;">Contact</a>
         </nav>
       </div>
-      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-top:34px; padding-top:24px; border-top:1px solid rgba(242,238,230,0.09);">
+      <div class="footer-bottom" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-top:34px; padding-top:24px; border-top:1px solid rgba(242,238,230,0.09);">
         <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.08em; color:#6E6860;">&copy; 2026 Arch Essentials LLC &middot; All rights reserved &middot; Los Angeles, CA</div>
-        <div style="display:flex; gap:26px; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#9A948A;">
+        <div class="footer-legal" style="display:flex; gap:26px; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#9A948A;">
           <a href="privacy.html" class="footer-link" style="transition:color .2s;">Privacy Policy</a>
           <a href="terms.html"   class="footer-link" style="transition:color .2s;">Terms of Service</a>
           <a href="privacy.html#do-not-sell" class="footer-link" style="transition:color .2s;">Do Not Sell My Info</a>
