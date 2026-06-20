@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..500&family=Schibsted+Grotesk:wght@400..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;}
+a{color:inherit;text-decoration:none;}
+</style>
+</helmet>
+
+<div style="background:#141110; color:#F2EEE6; font-family:'Schibsted Grotesk',system-ui,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:clip;">
+
+  <!-- ============ NAV ============ -->
+  <header id="site-nav" style="position:sticky; top:0; z-index:50; background:rgba(20,17,16,0.78); backdrop-filter:blur(14px); border-bottom:1px solid rgba(242,238,230,0.09); transition:background .3s ease, padding .3s ease, border-color .3s ease;">
+    <div id="site-nav-inner" style="max-width:1280px; margin:0 auto; padding:18px 64px; display:flex; align-items:center; justify-content:space-between; border:1px solid transparent; border-radius:0px; transition:max-width .3s ease, background .3s ease, border-radius .3s ease, box-shadow .3s ease, padding .3s ease, border-color .3s ease;" data-comment-anchor="214d2fa30a-div">
+      <a href="#top" style="display:flex; align-items:center; gap:13px;">
+        <div style="position:relative; width:30px; height:25px;">
+          <div style="position:absolute; top:0; left:0; width:30px; height:4px; background:#CB4A2F;"></div>
+          <div style="position:absolute; top:8px; left:4px; width:22px; height:3px; background:#CB4A2F;"></div>
+          <div style="position:absolute; top:3px; left:6px; width:3.5px; height:22px; background:#CB4A2F; transform:rotate(2deg); transform-origin:bottom;"></div>
+          <div style="position:absolute; top:3px; right:6px; width:3.5px; height:22px; background:#CB4A2F; transform:rotate(-2deg); transform-origin:bottom;"></div>
+        </div>
+        <span style="font-family:'Schibsted Grotesk',sans-serif; font-size:20px; font-weight:700; letter-spacing:-0.035em; white-space:nowrap;" data-comment-anchor="bcd4b3c66a-span">Arch <span style="font-weight:450; color:#C9C3B9;">Essentials</span></span>
+      </a>
+      <nav style="display:flex; align-items:center; gap:36px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#A39E94;">
+        <a href="#philosophy" style="transition:color .2s;" style-hover="color:#F2EEE6;">Philosophy</a>
+        <a href="#portfolio" style="transition:color .2s;" style-hover="color:#F2EEE6;">Portfolio</a>
+        <a href="#approach" style="transition:color .2s;" style-hover="color:#F2EEE6;">Approach</a>
+        <a href="#contact" style="display:inline-block; color:#F2EEE6; background:#CB4A2F; border:1px solid #CB4A2F; border-radius:2px; padding:9px 16px; transition:all .2s;" style-hover="background:#D85A3D; border-color:#D85A3D;" data-comment-anchor="2f0a1d81d8-a">Work with us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="top" data-screen-label="Hero" style="position:relative; border-bottom:1px solid rgba(242,238,230,0.09); background-image:repeating-linear-gradient(to right, rgba(242,238,230,0.035) 0 1px, transparent 1px 160px); background-position:64px 0;">
+    <!-- subtle torii motif, right -->
+    <div style="position:absolute; right:-40px; bottom:0; width:520px; height:600px; opacity:0.05; pointer-events:none;">
+      <div style="position:absolute; top:0; left:0; width:520px; height:34px; background:#F2EEE6;"></div>
+      <div style="position:absolute; top:46px; left:36px; width:448px; height:13px; background:#F2EEE6;"></div>
+      <div style="position:absolute; top:118px; left:60px; width:400px; height:26px; background:#F2EEE6;"></div>
+      <div style="position:absolute; top:46px; left:238px; width:44px; height:72px; background:#F2EEE6;"></div>
+      <div style="position:absolute; top:34px; left:108px; width:40px; height:566px; background:#F2EEE6; transform:rotate(2deg); transform-origin:bottom center;"></div>
+      <div style="position:absolute; top:34px; right:108px; width:40px; height:566px; background:#F2EEE6; transform:rotate(-2deg); transform-origin:bottom center;"></div>
+    </div>
+
+    <div style="position:relative; max-width:1280px; margin:0 auto; padding:118px 64px 80px;">
+      <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#CB4A2F;" data-comment-anchor="c06aba4bda-div">A Los Angeles house of brands</div>
+      <h1 style="font-weight:760; font-size:78px; line-height:0.99; letter-spacing:-0.035em; margin:30px 0 0; max-width:960px;">We design the essentials of modern life&mdash;and the brands that carry them.</h1>
+      <p style="font-size:18px; line-height:1.62; color:#A39E94; max-width:540px; margin:30px 0 0;">Arch Essentials builds practical consumer brands across categories, redesigning the products of everyday life around simplicity, efficiency, and responsibility.</p>
+    </div>
+
+    <!-- hero meta strip -->
+    <div style="position:relative; border-top:1px solid rgba(242,238,230,0.09);">
+      <div style="max-width:1280px; margin:0 auto; padding:0 64px; display:flex;">
+        <div style="flex:1; padding:22px 0; border-right:1px solid rgba(242,238,230,0.09);"><span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#6E6860;">Headquarters</span><div style="font-size:15px; margin-top:5px;">Los Angeles, California</div></div>
+        <div style="flex:1.4; padding:22px 0 22px 36px;"><span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#6E6860;">Principles</span><div style="font-size:15px; margin-top:5px;" data-comment-anchor="923b6fefd3-div">Simplicity &middot; Efficiency &middot; Responsibility</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PHILOSOPHY ============ -->
+  <section id="philosophy" data-screen-label="Philosophy" style="border-bottom:1px solid rgba(242,238,230,0.09);">
+    <div style="max-width:1280px; margin:0 auto; padding:118px 64px;">
+      <div style="display:flex; align-items:baseline; gap:18px; margin-bottom:60px;">
+        <span style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#CB4A2F;">01</span>
+        <span style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#A39E94;">Philosophy</span>
+      </div>
+      <div style="display:grid; grid-template-columns:1.5fr 1fr; gap:80px; align-items:start;">
+        <div>
+          <h2 style="font-family:'Newsreader',serif; font-weight:320; font-size:46px; line-height:1.2; letter-spacing:-0.015em; margin:0;">The torii gate marks the passage from the everyday world to an elevated domain. We build brands in that <em style="font-style:italic;">same spirit</em>&mdash;reimagining the ordinary objects of daily life.</h2>
+        </div>
+        <div style="padding-top:8px;">
+          <p style="font-size:16px; line-height:1.7; color:#A39E94; margin:0;">We are an e&#8209;commerce firm based in Los Angeles. Our commitment is to bring innovation across multiple industries through thoughtful design&mdash;redesigning solutions with an emphasis on what matters and nothing that doesn&rsquo;t.</p>
+          <p style="font-size:16px; line-height:1.7; color:#A39E94; margin:20px 0 0;">Join us in reimagining and experiencing a whole new world of everyday essentials.</p>
+        </div>
+      </div>
+      <!-- three principles -->
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:90px; border-top:1px solid rgba(242,238,230,0.14);">
+        <div style="padding:34px 36px 0 0; border-right:1px solid rgba(242,238,230,0.14);">
+          <div style="font-family:'Newsreader',serif; font-size:34px; color:#CB4A2F;">01</div>
+          <div style="font-size:21px; font-weight:600; margin-top:14px;">Simplicity</div>
+          <p style="font-size:15px; line-height:1.65; color:#9A948A; margin:12px 0 0;">We strip products back to their essential purpose&mdash;clear, intuitive, and free of excess.</p>
+        </div>
+        <div style="padding:34px 36px 0 36px; border-right:1px solid rgba(242,238,230,0.14);">
+          <div style="font-family:'Newsreader',serif; font-size:34px; color:#CB4A2F;">02</div>
+          <div style="font-size:21px; font-weight:600; margin-top:14px;">Efficiency</div>
+          <p style="font-size:15px; line-height:1.65; color:#9A948A; margin:12px 0 0;">From design to delivery, we build lean operations that respect both time and resources.</p>
+        </div>
+        <div style="padding:34px 0 0 36px;">
+          <div style="font-family:'Newsreader',serif; font-size:34px; color:#CB4A2F;">03</div>
+          <div style="font-size:21px; font-weight:600; margin-top:14px;" data-comment-anchor="a33e2caad1-div">Responsibility</div>
+          <p style="font-size:15px; line-height:1.65; color:#9A948A; margin:12px 0 0;">We build responsibly&mdash;mindful of the materials we use, the partners we choose, and the planet we share.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PORTFOLIO TEASER ============ -->
+  <section id="portfolio" data-screen-label="Portfolio teaser" style="border-bottom:1px solid rgba(242,238,230,0.09);">
+    <div style="max-width:1280px; margin:0 auto; padding:118px 64px;">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:24px; margin-bottom:56px;">
+        <div>
+          <div style="display:flex; align-items:baseline; gap:18px; margin-bottom:26px;">
+            <span style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#CB4A2F;">02</span>
+            <span style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#A39E94;">Portfolio</span>
+          </div>
+          <h2 style="font-weight:740; font-size:54px; line-height:1.0; letter-spacing:-0.03em; margin:0; max-width:640px;">A growing house of brands across everyday categories.</h2>
+        </div>
+        <a href="Arch%20Essentials%20-%20Portfolio.dc.html" style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#F2EEE6; border:1px solid rgba(242,238,230,0.28); border-radius:2px; padding:14px 22px; white-space:nowrap; transition:all .2s;" style-hover="background:#CB4A2F; border-color:#CB4A2F;">Explore the portfolio &rarr;</a>
+      </div>
+
+      <!-- category rows -->
+      <div style="border-top:1px solid rgba(242,238,230,0.14);">
+        <a href="Arch%20Essentials%20-%20Portfolio.dc.html" style="display:flex; align-items:center; gap:32px; padding:34px 8px; border-bottom:1px solid rgba(242,238,230,0.14); transition:background .2s, padding .2s;" style-hover="background:rgba(242,238,230,0.03); padding-left:20px;" data-comment-anchor="e8eb485a70-a">
+          <span style="font-family:'Space Mono',monospace; font-size:13px; color:#CB4A2F; width:40px;">01</span>
+          <span style="font-size:30px; font-weight:600; letter-spacing:-0.02em; flex:1;">Home &amp; Lifestyle</span>
+          <span style="font-size:15px; color:#9A948A; flex:1.3; max-width:420px;">Considered objects for the spaces we live in&mdash;calm, functional, built to last.</span>
+          <span style="color:#CB4A2F; font-size:20px;">&rarr;</span>
+        </a>
+        <a href="Arch%20Essentials%20-%20Portfolio.dc.html" style="display:flex; align-items:center; gap:32px; padding:34px 8px; border-bottom:1px solid rgba(242,238,230,0.14); transition:background .2s, padding .2s;" style-hover="background:rgba(242,238,230,0.03); padding-left:20px;">
+          <span style="font-family:'Space Mono',monospace; font-size:13px; color:#CB4A2F; width:40px;">02</span>
+          <span style="font-size:30px; font-weight:600; letter-spacing:-0.02em; flex:1;">Outdoor &amp; Recreation</span>
+          <span style="font-size:15px; color:#9A948A; flex:1.3; max-width:420px;">Gear that gets out of the way&mdash;durable, lightweight, ready for the world outside.</span>
+          <span style="color:#CB4A2F; font-size:20px;">&rarr;</span>
+        </a>
+        <a href="Arch%20Essentials%20-%20Portfolio.dc.html" style="display:flex; align-items:center; gap:32px; padding:34px 8px; border-bottom:1px solid rgba(242,238,230,0.14); transition:background .2s, padding .2s;" style-hover="background:rgba(242,238,230,0.03); padding-left:20px;">
+          <span style="font-family:'Space Mono',monospace; font-size:13px; color:#CB4A2F; width:40px;">03</span>
+          <span style="font-size:30px; font-weight:600; letter-spacing:-0.02em; flex:1;">Gifts &amp; Novelty</span>
+          <span style="font-size:15px; color:#9A948A; flex:1.3; max-width:420px;">Small delights worth giving&mdash;thoughtful, original, and made to be remembered.</span>
+          <span style="color:#CB4A2F; font-size:20px;">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPROACH ============ -->
+  <section id="approach" data-screen-label="Approach" style="border-bottom:1px solid rgba(242,238,230,0.09);">
+    <div style="max-width:1280px; margin:0 auto; padding:118px 64px;">
+      <div style="display:flex; align-items:baseline; gap:18px; margin-bottom:26px;">
+        <span style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#CB4A2F;">03</span>
+        <span style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#A39E94;">Approach</span>
+      </div>
+      <h2 style="font-weight:740; font-size:54px; line-height:1.0; letter-spacing:-0.03em; margin:0 0 70px; max-width:620px;">How we build a brand.</h2>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid rgba(242,238,230,0.14);">
+        <div style="padding:32px 28px 0 0; border-right:1px solid rgba(242,238,230,0.14);">
+          <div style="font-family:'Space Mono',monospace; font-size:12px; color:#CB4A2F; letter-spacing:0.1em;">STEP 01</div>
+          <div style="font-size:20px; font-weight:600; margin-top:16px;">Identify</div>
+          <p style="font-size:14.5px; line-height:1.6; color:#9A948A; margin:10px 0 0;">We find a category ripe for redesign&mdash;where the everyday deserves better.</p>
+        </div>
+        <div style="padding:32px 28px 0 28px; border-right:1px solid rgba(242,238,230,0.14);">
+          <div style="font-family:'Space Mono',monospace; font-size:12px; color:#CB4A2F; letter-spacing:0.1em;">STEP 02</div>
+          <div style="font-size:20px; font-weight:600; margin-top:16px;">Design</div>
+          <p style="font-size:14.5px; line-height:1.6; color:#9A948A; margin:10px 0 0;">We shape the product and brand around simplicity and real human need.</p>
+        </div>
+        <div style="padding:32px 28px 0 28px; border-right:1px solid rgba(242,238,230,0.14);">
+          <div style="font-family:'Space Mono',monospace; font-size:12px; color:#CB4A2F; letter-spacing:0.1em;">STEP 03</div>
+          <div style="font-size:20px; font-weight:600; margin-top:16px;">Build</div>
+          <p style="font-size:14.5px; line-height:1.6; color:#9A948A; margin:10px 0 0;">We launch with lean operations and a direct relationship to the customer.</p>
+        </div>
+        <div style="padding:32px 0 0 28px;">
+          <div style="font-family:'Space Mono',monospace; font-size:12px; color:#CB4A2F; letter-spacing:0.1em;">STEP 04</div>
+          <div style="font-size:20px; font-weight:600; margin-top:16px;">Scale</div>
+          <p style="font-size:14.5px; line-height:1.6; color:#9A948A; margin:10px 0 0;">We grow each brand sustainably&mdash;built to endure well beyond launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" data-screen-label="Contact" style="position:relative; background:#1B1714; overflow:hidden;">
+    <!-- subtle torii mark, faint -->
+    <div style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:360px; height:300px; opacity:0.045; pointer-events:none;">
+      <div style="position:absolute; top:0; left:0; width:360px; height:24px; background:#F2EEE6;"></div>
+      <div style="position:absolute; top:64px; left:34px; width:292px; height:18px; background:#F2EEE6;"></div>
+      <div style="position:absolute; top:24px; left:78px; width:28px; height:276px; background:#F2EEE6; transform:rotate(2deg); transform-origin:bottom center;"></div>
+      <div style="position:absolute; top:24px; right:78px; width:28px; height:276px; background:#F2EEE6; transform:rotate(-2deg); transform-origin:bottom center;"></div>
+    </div>
+    <div style="position:relative; max-width:1280px; margin:0 auto; padding:130px 64px; text-align:center;">
+      <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#CB4A2F;">Work with us</div>
+      <h2 style="font-family:'Newsreader',serif; font-weight:300; font-size:66px; line-height:1.05; letter-spacing:-0.02em; margin:24px 0 0;">Let&rsquo;s build something <em style="font-style:italic;">essential.</em></h2>
+      <p style="font-size:17px; line-height:1.6; color:#A39E94; max-width:520px; margin:24px auto 0;">For partnerships, acquisitions, press, or brand founders looking for a home&mdash;we&rsquo;d love to hear from you.</p>
+      <a href="mailto:hello@archessbrands.com" style="display:inline-block; margin-top:40px; font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; background:#CB4A2F; color:#F2EEE6; padding:18px 34px; border-radius:2px; transition:background .2s;" style-hover="background:#D85A3D;">hello&#64;archessbrands&#46;com</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="border-top:1px solid rgba(242,238,230,0.09);">
+    <div style="max-width:1280px; margin:0 auto; padding:48px 64px 40px;" data-comment-anchor="84401df6cc-div">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px;">
+        <div style="display:flex; align-items:center; gap:13px;">
+          <div style="position:relative; width:26px; height:22px;">
+            <div style="position:absolute; top:0; left:0; width:26px; height:3.5px; background:#CB4A2F;"></div>
+            <div style="position:absolute; top:7px; left:3px; width:20px; height:2.5px; background:#CB4A2F;"></div>
+            <div style="position:absolute; top:3px; left:5px; width:3px; height:19px; background:#CB4A2F; transform:rotate(2deg); transform-origin:bottom;"></div>
+            <div style="position:absolute; top:3px; right:5px; width:3px; height:19px; background:#CB4A2F; transform:rotate(-2deg); transform-origin:bottom;"></div>
+          </div>
+          <span style="font-family:'Schibsted Grotesk',sans-serif; font-size:18px; font-weight:700; letter-spacing:-0.035em; white-space:nowrap;" data-comment-anchor="4f21211df5-span">Arch <span style="font-weight:450; color:#C9C3B9;">Essentials</span></span>
+        </div>
+        <div style="display:flex; gap:30px; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#9A948A;">
+          <a href="#philosophy" style="transition:color .2s;" style-hover="color:#F2EEE6;">Philosophy</a>
+          <a href="Arch%20Essentials%20-%20Portfolio.dc.html" style="transition:color .2s;" style-hover="color:#F2EEE6;">Portfolio</a>
+          <a href="#approach" style="transition:color .2s;" style-hover="color:#F2EEE6;">Approach</a>
+          <a href="mailto:hello@archessbrands.com" style="transition:color .2s;" style-hover="color:#F2EEE6;">Contact</a>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-top:34px; padding-top:24px; border-top:1px solid rgba(242,238,230,0.09);">
+        <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.08em; color:#6E6860;">&copy; 2026 Arch Essentials &middot; All rights reserved &middot; Los Angeles, CA</div>
+        <div style="display:flex; gap:26px; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#9A948A;">
+          <a href="Arch%20Essentials%20-%20Privacy.dc.html" style="transition:color .2s;" style-hover="color:#F2EEE6;">Privacy Policy</a>
+          <a href="Arch%20Essentials%20-%20Terms.dc.html" style="transition:color .2s;" style-hover="color:#F2EEE6;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this._onScroll = () => {
+      const h = document.getElementById('site-nav');
+      const bar = document.getElementById('site-nav-inner');
+      if (!h || !bar) return;
+      const s = window.scrollY > 16;
+      h.style.background = s ? 'transparent' : 'rgba(20,17,16,0.78)';
+      h.style.backdropFilter = s ? 'none' : 'blur(14px)';
+      h.style.webkitBackdropFilter = s ? 'none' : 'blur(14px)';
+      h.style.borderBottomColor = s ? 'transparent' : 'rgba(242,238,230,0.09)';
+      h.style.paddingTop = s ? '14px' : '0px';
+      bar.style.maxWidth = s ? '1060px' : '1280px';
+      bar.style.background = s ? 'rgba(28,24,21,0.86)' : 'transparent';
+      bar.style.backdropFilter = s ? 'blur(18px)' : 'none';
+      bar.style.webkitBackdropFilter = s ? 'blur(18px)' : 'none';
+      bar.style.borderColor = s ? 'rgba(242,238,230,0.12)' : 'transparent';
+      bar.style.borderRadius = s ? '100px' : '0px';
+      bar.style.boxShadow = s ? '0 20px 44px -22px rgba(0,0,0,0.75)' : 'none';
+      bar.style.paddingTop = s ? '12px' : '18px';
+      bar.style.paddingBottom = s ? '12px' : '18px';
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+}
+</script>
+</body>
+</html>

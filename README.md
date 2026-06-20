@@ -1,42 +1,25 @@
-# Arch Essentials
+# CODING AGENTS: READ THIS FIRST
 
-Marketing site for [Arch Essentials](https://www.archessbrands.com) — an LA-based e-commerce brand focused on simplicity, efficiency, and sustainability.
+This is a **handoff bundle** from Claude Design (claude.ai/design).
 
-## Stack
+A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
 
-- HTML5 + CSS3 (no build step required)
-- [Bootstrap 5.3.2](https://getbootstrap.com/) — responsive grid and utilities
-- [Font Awesome 6.4.2](https://fontawesome.com/) — icons
-- [WOW.js](https://wowjs.uk/) — scroll-triggered animations
+## What you should do — IMPORTANT
 
-## Project structure
+**Read the chat transcripts first.** There are 5 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
 
-```
-├── index.html              # Main page
-├── assets/
-│   ├── css/
-│   │   └── style.css       # All custom styles and animation keyframes
-│   ├── js/
-│   │   └── main.js         # WOW.js init
-│   └── files/
-│       ├── Arch-logo.png
-│       ├── arch.png
-│       ├── favicon.png
-│       ├── og-arch-essentials.png
-│       ├── intro_bg.jpg
-│       ├── mobile_bg.jpg
-│       └── wow.min.js
-└── CNAME                   # GitHub Pages custom domain
-```
+**Read `project/Arch Essentials - Home.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
 
-## Development
+**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
 
-No build tools required. Open `index.html` directly in a browser or serve it with any static file server:
+## About the design files
 
-```bash
-npx serve .
-```
+The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
 
-## Deployment
+**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
 
-The site is hosted on GitHub Pages. Pushing to `main` deploys automatically to [www.archessbrands.com](https://www.archessbrands.com).
+## Bundle contents
+
+- `README.md` — this file
+- `chats/` — conversation transcripts (read these!)
+- `project/` — the `Archess Website` project files (HTML prototypes, assets, components)
