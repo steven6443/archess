@@ -12,10 +12,40 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Arch Essentials LLC — A Los Angeles House of Brands">
 <meta name="twitter:description" content="We design the essentials of modern life — and the brands that carry them. A Los Angeles house of brands.">
+<meta property="og:url" content="https://www.archessbrands.com/">
+<meta property="og:image" content="https://www.archessbrands.com/assets/files/og-arch-essentials.png">
+<meta name="twitter:image" content="https://www.archessbrands.com/assets/files/og-arch-essentials.png">
+<link rel="canonical" href="https://www.archessbrands.com/">
+<link rel="icon" href="assets/files/favicon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Arch Essentials LLC",
+  "url": "https://www.archessbrands.com",
+  "logo": "https://www.archessbrands.com/assets/files/Arch-logo.png",
+  "email": "hello@archessbrands.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Los Angeles", "addressRegion": "CA", "addressCountry": "US" }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..500&family=Schibsted+Grotesk:wght@400..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --red:        #CB4A2F;
+    --red-dk:     #B83E28;
+    --cream:      #F2EEE6;
+    --bg:         #141110;
+    --muted:      #A39E94;
+    --dim:        #9A948A;
+    --faint:      #6E6860;
+    --border:     rgba(242,238,230,0.09);
+    --border-mid: rgba(242,238,230,0.14);
+    --font-sans:  'Schibsted Grotesk', system-ui, sans-serif;
+    --font-serif: 'Newsreader', serif;
+    --font-mono:  'Space Mono', monospace;
+  }
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { margin: 0; }
@@ -26,14 +56,18 @@
     100% { transform: translateX(-50%); }
   }
 
-  /* Nav link hover */
-  .nav-link:hover { color: #F2EEE6; }
+  /* Keyboard focus ring */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
 
-  /* Work with us button hover */
-  .btn-cta:hover { background: #CB4A2F !important; border-color: #CB4A2F !important; }
-
-  /* Contact email button hover */
-  .btn-email:hover { background: #B83E28 !important; }
+  .nav-link:hover    { color: var(--cream); }
+  .btn-cta:hover     { background: var(--red) !important; border-color: var(--red) !important; }
+  .btn-email:hover   { background: var(--red-dk) !important; }
+  .cookie-btn:hover  { background: var(--red-dk) !important; }
+  .footer-link:hover { color: var(--cream); }
 
   /* Scroll offset so sections don't hide under the sticky nav */
   #philosophy, #approach, #portfolio, #contact { scroll-margin-top: 72px; }
@@ -43,12 +77,6 @@
     background: rgba(242,238,230,0.05);
     padding-left: 20px !important;
   }
-
-  /* Cookie banner accept button hover */
-  .cookie-btn:hover { background: #D85A3D !important; }
-
-  /* Footer / legal link hover */
-  .footer-link:hover { color: #F2EEE6; }
 
   /* ── Mobile (≤ 767px) ─────────────────────────────────────────────────── */
   @media (max-width: 767px) {
@@ -126,14 +154,16 @@
         </div>
         <span style="font-family:'Schibsted Grotesk',sans-serif; font-size:20px; font-weight:700; letter-spacing:-0.035em; white-space:nowrap;">Arch <span style="font-weight:450; color:#C9C3B9;">Essentials</span></span>
       </a>
-      <nav id="main-nav" style="display:flex; align-items:center; gap:36px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#A39E94;">
+      <nav id="main-nav" aria-label="Primary" style="display:flex; align-items:center; gap:36px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#A39E94;">
         <a href="#philosophy" class="nav-link" style="transition:color .2s;">Philosophy</a>
         <a href="#approach"   class="nav-link" style="transition:color .2s;">Approach</a>
         <a href="#portfolio"  class="nav-link" style="transition:color .2s;">Portfolio</a>
-        <a href="#contact" class="btn-cta" style="display:inline-block; color:#F2EEE6; background:#CB4A2F; border:1px solid #CB4A2F; border-radius:2px; padding:9px 16px; transition:all .2s;">Work with us</a>
+        <a href="#contact" class="btn-cta" style="display:inline-block; color:#F2EEE6; background:#CB4A2F; border:1px solid #CB4A2F; border-radius:2px; padding:9px 16px; transition:background .2s,border-color .2s;">Work with us</a>
       </nav>
     </div>
   </header>
+
+  <main>
 
   <!-- ============ HERO ============ -->
   <section id="top" style="position:relative; overflow:hidden; border-bottom:1px solid rgba(242,238,230,0.09); background-image:repeating-linear-gradient(to right, rgba(242,238,230,0.035) 0 1px, transparent 1px 160px); background-position:64px 0;">
@@ -230,7 +260,7 @@
       <!-- three principles — bento: staggered fade-up on scroll + hover lift + glow -->
       <div id="philosophy-tiles" style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:90px;">
         <!-- Simplicity -->
-        <div data-phil-tile style="opacity:0; transform:translateY(28px); transition:opacity 0.65s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94);">
+        <div data-phil-tile tabindex="0" style="opacity:0; transform:translateY(28px); transition:opacity 0.65s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94);">
           <div style="background:#0F0D0C; border:1px solid rgba(242,238,230,0.07); border-top:3px solid #CB4A2F; border-radius:0 0 8px 8px; padding:40px; min-height:260px; display:flex; flex-direction:column; justify-content:flex-start; box-shadow:inset 0 1px 0 rgba(242,238,230,0.06);">
             <div style="font-size:32px; font-weight:680; letter-spacing:-0.025em; line-height:1.1; margin-bottom:18px; color:#F2EEE6;">Simplicity</div>
             <div style="width:28px; height:2px; background:#CB4A2F; margin-bottom:18px;"></div>
@@ -238,7 +268,7 @@
           </div>
         </div>
         <!-- Demand -->
-        <div data-phil-tile style="opacity:0; transform:translateY(28px); transition:opacity 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.13s, transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.13s;">
+        <div data-phil-tile tabindex="0" style="opacity:0; transform:translateY(28px); transition:opacity 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.13s, transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.13s;">
           <div style="background:#0F0D0C; border:1px solid rgba(242,238,230,0.07); border-top:3px solid #CB4A2F; border-radius:0 0 8px 8px; padding:40px; min-height:260px; display:flex; flex-direction:column; justify-content:flex-start; box-shadow:inset 0 1px 0 rgba(242,238,230,0.06);">
             <div style="font-size:32px; font-weight:680; letter-spacing:-0.025em; line-height:1.1; margin-bottom:18px; color:#F2EEE6;">Demand</div>
             <div style="width:28px; height:2px; background:#CB4A2F; margin-bottom:18px;"></div>
@@ -246,7 +276,7 @@
           </div>
         </div>
         <!-- Responsibility -->
-        <div data-phil-tile style="opacity:0; transform:translateY(28px); transition:opacity 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.26s, transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.26s;">
+        <div data-phil-tile tabindex="0" style="opacity:0; transform:translateY(28px); transition:opacity 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.26s, transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.26s;">
           <div style="background:#0F0D0C; border:1px solid rgba(242,238,230,0.07); border-top:3px solid #CB4A2F; border-radius:0 0 8px 8px; padding:40px; min-height:260px; display:flex; flex-direction:column; justify-content:flex-start; box-shadow:inset 0 1px 0 rgba(242,238,230,0.06);">
             <div style="font-size:32px; font-weight:680; letter-spacing:-0.025em; line-height:1.1; margin-bottom:18px; color:#F2EEE6;">Responsibility</div>
             <div style="width:28px; height:2px; background:#CB4A2F; margin-bottom:18px;"></div>
@@ -346,6 +376,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ============ FOOTER ============ -->
   <footer style="border-top:1px solid rgba(242,238,230,0.09);">
     <div class="footer-inner" style="max-width:1280px; margin:0 auto; padding:48px 64px 40px;">
@@ -359,7 +391,7 @@
           </div>
           <span style="font-family:'Schibsted Grotesk',sans-serif; font-size:18px; font-weight:700; letter-spacing:-0.035em; white-space:nowrap;">Arch <span style="font-weight:450; color:#C9C3B9;">Essentials</span></span>
         </a>
-        <nav style="display:flex; gap:30px; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#9A948A;">
+        <nav aria-label="Footer" style="display:flex; gap:30px; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#9A948A;">
           <a href="#philosophy" class="footer-link" style="transition:color .2s;">Philosophy</a>
           <a href="#approach"   class="footer-link" style="transition:color .2s;">Approach</a>
           <a href="#portfolio"  class="footer-link" style="transition:color .2s;">Portfolio</a>
@@ -438,6 +470,7 @@
     msg.innerHTML = 'We use cookies to operate this site and understand how it’s used. By continuing, you agree to our <a href="privacy.html" style="color:#CB4A2F;border-bottom:1px solid rgba(203,74,47,0.4);">Privacy Policy</a>.';
 
     const btn = document.createElement('button');
+    btn.type = 'button';
     btn.textContent = 'ACCEPT';
     btn.className = 'cookie-btn';
     btn.style.cssText = [
@@ -484,6 +517,8 @@
             tile.style.transition = 'transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.3s ease';
             tile.addEventListener('mouseenter', function () { hoverIn(tile); });
             tile.addEventListener('mouseleave', function () { hoverOut(tile); });
+            tile.addEventListener('focus',      function () { hoverIn(tile); });
+            tile.addEventListener('blur',       function () { hoverOut(tile); });
           });
         }, 910);
       });
