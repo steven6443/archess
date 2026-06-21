@@ -17,6 +17,9 @@
 <meta name="twitter:image" content="https://www.archessbrands.com/assets/files/og-arch-essentials.png">
 <link rel="canonical" href="https://www.archessbrands.com/">
 <link rel="icon" href="assets/files/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..500&family=Schibsted+Grotesk:wght@400..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,9 +31,6 @@
   "address": { "@type": "PostalAddress", "addressLocality": "Los Angeles", "addressRegion": "CA", "addressCountry": "US" }
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..500&family=Schibsted+Grotesk:wght@400..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --red:        #CB4A2F;
@@ -78,10 +78,78 @@
     padding-left: 20px !important;
   }
 
+  /* ── Hamburger button ──────────────────────────────────────────────────── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--cream);
+    border-radius: 1px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  /* ── Mobile menu overlay ────────────────────────────────────────────────── */
+  #mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 49;
+    background: rgba(20,17,16,0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 72px;
+    gap: 0;
+  }
+  #mobile-menu.open { display: flex; }
+  .mobile-nav-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    width: 240px;
+    text-align: center;
+    transition: color 0.2s;
+  }
+  .mobile-nav-link:hover { color: var(--cream); }
+  .mobile-menu-cta {
+    margin-top: 36px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: var(--red);
+    color: var(--cream);
+    padding: 14px 32px;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .mobile-menu-cta:hover { background: var(--red-dk); }
+
   /* ── Mobile (≤ 767px) ─────────────────────────────────────────────────── */
   @media (max-width: 767px) {
     /* Nav */
     #site-nav-inner       { padding: 14px 20px !important; }
+    .hamburger            { display: flex; }
     #main-nav .nav-link   { display: none; }
 
     /* Hero */
@@ -159,9 +227,22 @@
         <a href="#approach"   class="nav-link" style="transition:color .2s;">Approach</a>
         <a href="#portfolio"  class="nav-link" style="transition:color .2s;">Portfolio</a>
         <a href="#contact" class="btn-cta" style="display:inline-block; color:#F2EEE6; background:#CB4A2F; border:1px solid #CB4A2F; border-radius:2px; padding:9px 16px; transition:background .2s,border-color .2s;">Work with us</a>
+        <button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
     </div>
   </header>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div id="mobile-menu" role="dialog" aria-label="Navigation" aria-modal="true">
+    <nav style="display:flex; flex-direction:column; align-items:center; width:100%;">
+      <a href="#philosophy" class="mobile-nav-link">Philosophy</a>
+      <a href="#approach"   class="mobile-nav-link">Approach</a>
+      <a href="#portfolio"  class="mobile-nav-link">Portfolio</a>
+    </nav>
+    <a href="#contact" class="mobile-menu-cta">Work with us</a>
+  </div>
 
   <main>
 
@@ -260,25 +341,25 @@
       <!-- three principles — bento: staggered fade-up on scroll + hover lift + glow -->
       <div id="philosophy-tiles" style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:90px;">
         <!-- Simplicity -->
-        <div data-phil-tile tabindex="0" role="article" style="opacity:0; transform:translateY(28px); transition:opacity 0.65s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94);">
+        <div data-phil-tile tabindex="0" role="region" aria-labelledby="tile-simplicity" style="opacity:0; transform:translateY(28px); transition:opacity 0.65s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94);">
           <div style="background:#0F0D0C; border:1px solid rgba(242,238,230,0.07); border-top:3px solid #CB4A2F; border-radius:0 0 8px 8px; padding:40px; min-height:260px; display:flex; flex-direction:column; justify-content:flex-start; box-shadow:inset 0 1px 0 rgba(242,238,230,0.06);">
-            <div style="font-size:32px; font-weight:680; letter-spacing:-0.025em; line-height:1.1; margin-bottom:18px; color:#F2EEE6;">Simplicity</div>
+            <h3 id="tile-simplicity" style="font-size:32px; font-weight:680; letter-spacing:-0.025em; line-height:1.1; margin:0 0 18px; color:#F2EEE6;">Simplicity</h3>
             <div style="width:28px; height:2px; background:#CB4A2F; margin-bottom:18px;"></div>
             <p style="font-size:14px; line-height:1.65; color:#7A756F; margin:0;">We believe the best products are easy to understand, easy to use, and easy to recommend.</p>
           </div>
         </div>
         <!-- Demand -->
-        <div data-phil-tile tabindex="0" role="article" style="opacity:0; transform:translateY(28px); transition:opacity 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.13s, transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.13s;">
+        <div data-phil-tile tabindex="0" role="region" aria-labelledby="tile-demand" style="opacity:0; transform:translateY(28px); transition:opacity 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.13s, transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.13s;">
           <div style="background:#0F0D0C; border:1px solid rgba(242,238,230,0.07); border-top:3px solid #CB4A2F; border-radius:0 0 8px 8px; padding:40px; min-height:260px; display:flex; flex-direction:column; justify-content:flex-start; box-shadow:inset 0 1px 0 rgba(242,238,230,0.06);">
-            <div style="font-size:32px; font-weight:680; letter-spacing:-0.025em; line-height:1.1; margin-bottom:18px; color:#F2EEE6;">Demand</div>
+            <h3 id="tile-demand" style="font-size:32px; font-weight:680; letter-spacing:-0.025em; line-height:1.1; margin:0 0 18px; color:#F2EEE6;">Demand</h3>
             <div style="width:28px; height:2px; background:#CB4A2F; margin-bottom:18px;"></div>
             <p style="font-size:14px; line-height:1.65; color:#7A756F; margin:0;">We look for categories where customers are already searching for better options.</p>
           </div>
         </div>
         <!-- Responsibility -->
-        <div data-phil-tile tabindex="0" role="article" style="opacity:0; transform:translateY(28px); transition:opacity 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.26s, transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.26s;">
+        <div data-phil-tile tabindex="0" role="region" aria-labelledby="tile-responsibility" style="opacity:0; transform:translateY(28px); transition:opacity 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.26s, transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94) 0.26s;">
           <div style="background:#0F0D0C; border:1px solid rgba(242,238,230,0.07); border-top:3px solid #CB4A2F; border-radius:0 0 8px 8px; padding:40px; min-height:260px; display:flex; flex-direction:column; justify-content:flex-start; box-shadow:inset 0 1px 0 rgba(242,238,230,0.06);">
-            <div style="font-size:32px; font-weight:680; letter-spacing:-0.025em; line-height:1.1; margin-bottom:18px; color:#F2EEE6;">Responsibility</div>
+            <h3 id="tile-responsibility" style="font-size:32px; font-weight:680; letter-spacing:-0.025em; line-height:1.1; margin:0 0 18px; color:#F2EEE6;">Responsibility</h3>
             <div style="width:28px; height:2px; background:#CB4A2F; margin-bottom:18px;"></div>
             <p style="font-size:14px; line-height:1.65; color:#7A756F; margin:0;">We build responsibly&mdash;mindful of the materials we use, the partners we choose, and the planet we share.</p>
           </div>
@@ -440,7 +521,7 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // ── Anchor clicks: scroll without changing the URL ─────────────────────
+  // ── Anchor clicks: smooth scroll with nav offset + URL hash update ──────
   document.addEventListener('click', function (e) {
     const a = e.target.closest('a[href^="#"]');
     if (!a) return;
@@ -449,45 +530,29 @@
     const target = document.getElementById(id);
     if (!target) return;
     e.preventDefault();
-    target.scrollIntoView({ behavior: 'smooth' });
+    const y = target.getBoundingClientRect().top + window.scrollY - 72;
+    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+    history.pushState(null, '', '#' + id);
   });
 
-  // ── Cookie consent banner ───────────────────────────────────────────────
-  if (!localStorage.getItem('ae-cookies')) {
-    const banner = document.createElement('div');
-    banner.style.cssText = [
-      'position:fixed', 'bottom:0', 'left:0', 'right:0', 'z-index:999',
-      'background:#1B1714', 'border-top:1px solid rgba(242,238,230,0.12)',
-      'padding:18px 64px', 'display:flex', 'align-items:center',
-      'justify-content:space-between', 'gap:24px', 'flex-wrap:wrap'
-    ].join(';');
-
-    const msg = document.createElement('span');
-    msg.style.cssText = [
-      "font-family:'Space Mono',monospace", 'font-size:11px',
-      'letter-spacing:0.08em', 'color:#9A948A', 'max-width:680px', 'line-height:1.6'
-    ].join(';');
-    msg.innerHTML = 'We use cookies to operate this site and understand how it’s used. By continuing, you agree to our <a href="privacy.html" style="color:#CB4A2F;border-bottom:1px solid rgba(203,74,47,0.4);">Privacy Policy</a>.';
-
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.textContent = 'ACCEPT';
-    btn.className = 'cookie-btn';
-    btn.style.cssText = [
-      'flex-shrink:0', "font-family:'Space Mono',monospace", 'font-size:11px',
-      'letter-spacing:0.14em', 'background:#CB4A2F', 'color:#F2EEE6',
-      'border:none', 'border-radius:2px', 'padding:10px 18px',
-      'cursor:pointer', 'transition:background .2s'
-    ].join(';');
-    btn.addEventListener('click', function () {
-      localStorage.setItem('ae-cookies', '1');
-      banner.remove();
+  // ── Hamburger menu ──────────────────────────────────────────────────────
+  const ham = document.querySelector('.hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (ham && mobileMenu) {
+    ham.addEventListener('click', function () {
+      const open = mobileMenu.classList.toggle('open');
+      ham.classList.toggle('open', open);
+      ham.setAttribute('aria-expanded', String(open));
+      ham.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
     });
-
-    banner.id = 'ae-cookie-banner';
-    banner.appendChild(msg);
-    banner.appendChild(btn);
-    document.body.appendChild(banner);
+    mobileMenu.addEventListener('click', function (e) {
+      if (e.target.closest('.mobile-nav-link, .mobile-menu-cta')) {
+        mobileMenu.classList.remove('open');
+        ham.classList.remove('open');
+        ham.setAttribute('aria-expanded', 'false');
+        ham.setAttribute('aria-label', 'Open navigation');
+      }
+    });
   }
 
   // ── Philosophy tiles: staggered fade-up on scroll + hover lift + glow ──
@@ -528,5 +593,6 @@
   }
 })();
 </script>
+<script src="cookie-banner.js"></script>
 </body>
 </html>
