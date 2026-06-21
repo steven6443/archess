@@ -30,10 +30,13 @@
   .nav-link:hover { color: #F2EEE6; }
 
   /* Work with us button hover */
-  .btn-cta:hover { background: #D85A3D !important; border-color: #D85A3D !important; }
+  .btn-cta:hover { background: #CB4A2F !important; border-color: #CB4A2F !important; }
 
   /* Contact email button hover */
-  .btn-email:hover { background: #D85A3D !important; }
+  .btn-email:hover { background: #B83E28 !important; }
+
+  /* Scroll offset so sections don't hide under the sticky nav */
+  #philosophy, #approach, #portfolio, #contact { scroll-margin-top: 72px; }
 
   /* Portfolio category row hover */
   .category-row:hover {
@@ -380,9 +383,12 @@
   // ── Floating nav on scroll ──────────────────────────────────────────────
   const header = document.getElementById('site-nav');
   const bar    = document.getElementById('site-nav-inner');
+  let floating = null;
 
   function onScroll() {
     const s = window.scrollY > 16;
+    if (s === floating) return;
+    floating = s;
     header.style.background        = s ? 'transparent'             : 'rgba(20,17,16,0.78)';
     header.style.backdropFilter     = s ? 'none'                   : 'blur(14px)';
     header.style.webkitBackdropFilter = s ? 'none'                 : 'blur(14px)';
@@ -445,6 +451,7 @@
       banner.remove();
     });
 
+    banner.id = 'ae-cookie-banner';
     banner.appendChild(msg);
     banner.appendChild(btn);
     document.body.appendChild(banner);
@@ -471,14 +478,14 @@
           tile.style.opacity   = '1';
           tile.style.transform = 'translateY(0)';
         });
-        // after entrance animation, switch to hover-only transitions
+        // after entrance animation completes (650ms + 260ms delay = 910ms)
         setTimeout(function () {
           tiles.forEach(function (tile) {
             tile.style.transition = 'transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.3s ease';
             tile.addEventListener('mouseenter', function () { hoverIn(tile); });
             tile.addEventListener('mouseleave', function () { hoverOut(tile); });
           });
-        }, 1000);
+        }, 910);
       });
     }, { threshold: 0.25 });
 
