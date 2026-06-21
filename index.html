@@ -78,79 +78,19 @@
     padding-left: 20px !important;
   }
 
-  /* ── Hamburger button ──────────────────────────────────────────────────── */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 22px;
-    height: 14px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
+  /* ── Mobile (≤ 768px) / Desktop (≥ 769px) nav visibility ──────────────── */
+  @media (max-width: 768px) {
+    #site-nav-inner   { padding: 14px 24px !important; }
+    #site-nav nav     { display: none !important; }
+    #mobile-hamburger { display: flex !important; }
   }
-  .hamburger span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: var(--cream);
-    border-radius: 1px;
-    transition: transform 0.2s, opacity 0.2s;
+  @media (min-width: 769px) {
+    #mobile-hamburger { display: none !important; }
+    #mobile-menu      { display: none !important; }
   }
-  .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-  /* ── Mobile menu overlay ────────────────────────────────────────────────── */
-  #mobile-menu {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 49;
-    background: rgba(20,17,16,0.97);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 72px;
-    gap: 0;
-  }
-  #mobile-menu.open { display: flex; }
-  .mobile-nav-link {
-    font-family: 'Space Mono', monospace;
-    font-size: 18px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border);
-    width: 240px;
-    text-align: center;
-    transition: color 0.2s;
-  }
-  .mobile-nav-link:hover { color: var(--cream); }
-  .mobile-menu-cta {
-    margin-top: 36px;
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    background: var(--red);
-    color: var(--cream);
-    padding: 14px 32px;
-    border-radius: 2px;
-    transition: background 0.2s;
-  }
-  .mobile-menu-cta:hover { background: var(--red-dk); }
-
-  /* ── Mobile (≤ 767px) ─────────────────────────────────────────────────── */
-  @media (max-width: 767px) {
-    /* Nav */
-    #site-nav-inner       { padding: 14px 20px !important; }
-    .hamburger            { display: flex; }
-    #main-nav .nav-link   { display: none; }
+  /* ── Mobile (≤ 768px) ─────────────────────────────────────────────────── */
+  @media (max-width: 768px) {
 
     /* Hero */
     .hero-content { padding: 72px 24px 48px !important; }
@@ -189,8 +129,8 @@
     #ae-cookie-banner { padding: 16px 20px !important; }
   }
 
-  /* ── Tablet (768px – 1024px) ──────────────────────────────────────────── */
-  @media (min-width: 768px) and (max-width: 1024px) {
+  /* ── Tablet (769px – 1024px) ──────────────────────────────────────────── */
+  @media (min-width: 769px) and (max-width: 1024px) {
     #site-nav-inner { padding: 16px 32px !important; }
     .hero-content   { padding: 90px 40px 60px !important; }
     .hero-h1        { font-size: 56px !important; }
@@ -227,22 +167,40 @@
         <a href="#approach"   class="nav-link" style="transition:color .2s;">Approach</a>
         <a href="#portfolio"  class="nav-link" style="transition:color .2s;">Portfolio</a>
         <a href="#contact" class="btn-cta" style="display:inline-block; color:#F2EEE6; background:#CB4A2F; border:1px solid #CB4A2F; border-radius:2px; padding:9px 16px; transition:background .2s,border-color .2s;">Work with us</a>
-        <button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
-          <span></span><span></span><span></span>
-        </button>
+      </nav>
+      <button id="mobile-hamburger"
+        onclick="toggleMobileMenu()"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        style="display:none; flex-direction:column; justify-content:center; align-items:center;
+               gap:5px; width:40px; height:40px; background:none; border:none; cursor:pointer; padding:0;">
+        <span id="ham-1" style="display:block; width:22px; height:2px; background:#F2EEE6;
+               transition:transform .25s ease, opacity .25s ease; transform-origin:center;"></span>
+        <span id="ham-2" style="display:block; width:22px; height:2px; background:#F2EEE6;
+               transition:opacity .25s ease;"></span>
+        <span id="ham-3" style="display:block; width:22px; height:2px; background:#F2EEE6;
+               transition:transform .25s ease, opacity .25s ease; transform-origin:center;"></span>
+      </button>
+    </div>
+    <div id="mobile-menu"
+      style="overflow:hidden; max-height:0; transition:max-height .35s cubic-bezier(.4,0,.2,1);
+             border-top:1px solid transparent; background:rgba(20,17,16,0.98);">
+      <nav style="display:flex; flex-direction:column; padding:8px 24px 24px; gap:0;
+                  font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.12em;
+                  text-transform:uppercase; color:#A39E94;">
+        <a href="#philosophy" onclick="closeMobileMenu()"
+           style="padding:16px 0; border-bottom:1px solid rgba(242,238,230,0.07); transition:color .2s;" class="nav-link">Philosophy</a>
+        <a href="#approach"   onclick="closeMobileMenu()"
+           style="padding:16px 0; border-bottom:1px solid rgba(242,238,230,0.07); transition:color .2s;" class="nav-link">Approach</a>
+        <a href="#portfolio"  onclick="closeMobileMenu()"
+           style="padding:16px 0; border-bottom:1px solid rgba(242,238,230,0.07); transition:color .2s;" class="nav-link">Portfolio</a>
+        <a href="#contact" onclick="closeMobileMenu()"
+           style="display:inline-block; margin-top:20px; color:#F2EEE6; background:#CB4A2F;
+                  border:1px solid #CB4A2F; border-radius:2px; padding:12px 20px;
+                  text-align:center; transition:background .2s,border-color .2s;" class="btn-cta">Work with us</a>
       </nav>
     </div>
   </header>
-
-  <!-- ============ MOBILE MENU ============ -->
-  <div id="mobile-menu" role="dialog" aria-label="Navigation" aria-modal="true">
-    <nav style="display:flex; flex-direction:column; align-items:center; width:100%;">
-      <a href="#philosophy" class="mobile-nav-link">Philosophy</a>
-      <a href="#approach"   class="mobile-nav-link">Approach</a>
-      <a href="#portfolio"  class="mobile-nav-link">Portfolio</a>
-    </nav>
-    <a href="#contact" class="mobile-menu-cta">Work with us</a>
-  </div>
 
   <main>
 
@@ -535,25 +493,33 @@
     history.pushState(null, '', '#' + id);
   });
 
-  // ── Hamburger menu ──────────────────────────────────────────────────────
-  const ham = document.querySelector('.hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (ham && mobileMenu) {
-    ham.addEventListener('click', function () {
-      const open = mobileMenu.classList.toggle('open');
-      ham.classList.toggle('open', open);
-      ham.setAttribute('aria-expanded', String(open));
-      ham.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-    });
-    mobileMenu.addEventListener('click', function (e) {
-      if (e.target.closest('.mobile-nav-link, .mobile-menu-cta')) {
-        mobileMenu.classList.remove('open');
-        ham.classList.remove('open');
-        ham.setAttribute('aria-expanded', 'false');
-        ham.setAttribute('aria-label', 'Open navigation');
-      }
-    });
-  }
+  // ── Mobile menu ─────────────────────────────────────────────────────────
+  window._mobileMenuOpen = false;
+
+  window.toggleMobileMenu = function () {
+    window._mobileMenuOpen = !window._mobileMenuOpen;
+    window._applyMobileMenuState();
+  };
+
+  window.closeMobileMenu = function () {
+    window._mobileMenuOpen = false;
+    window._applyMobileMenuState();
+  };
+
+  window._applyMobileMenuState = function () {
+    var menu = document.getElementById('mobile-menu');
+    var btn  = document.getElementById('mobile-hamburger');
+    var ham1 = document.getElementById('ham-1');
+    var ham2 = document.getElementById('ham-2');
+    var ham3 = document.getElementById('ham-3');
+    var open = window._mobileMenuOpen;
+    menu.style.maxHeight      = open ? '300px'                          : '0px';
+    menu.style.borderTopColor = open ? 'rgba(242,238,230,0.09)'        : 'transparent';
+    btn.setAttribute('aria-expanded', String(open));
+    ham1.style.transform      = open ? 'translateY(7px) rotate(45deg)'  : 'none';
+    ham2.style.opacity        = open ? '0'                              : '1';
+    ham3.style.transform      = open ? 'translateY(-7px) rotate(-45deg)' : 'none';
+  };
 
   // ── Philosophy tiles: staggered fade-up on scroll + hover lift + glow ──
   const grid = document.getElementById('philosophy-tiles');
